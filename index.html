@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pomodoro Timer</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+  <header>
+    <div id="logo">
+      <h2 id="t1"><i class="fa-solid fa-cat"></i> Pomodoro</h2>
+    </div>
+    <div class="container">
+      <div class="tab_box">
+        <button class="tab_btn active"><i class="fa-solid fa-house-user"></i> Home</button>
+        <button class="tab_btn"><i class="fa-solid fa-clock"></i> Timer</button>
+        <button class="tab_btn"><i class="fa-solid fa-circle-info"></i> About</button>
+        <div class="line"></div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ...inside your Home tab content... -->
+<div id="homeSection">
+<label for="bgUpload" class="upload-label">
+    <i class="fa-solid fa-image"></i> Change Background
+  </label>
+  <input type="file" id="bgUpload" accept="image/*" style="display:none;">
+  <button id="resetBgBtn" class="upload-label" type="button" style="margin-left:10px;">
+  <i class="fa-solid fa-rotate-left"></i> Reset Background
+</button>
+
+  <div id="todoContainer">
+    <h3>To-Do List</h3>
+    <form id="todoForm">
+      <input type="text" id="todoInput" placeholder="Add a new task..." autocomplete="off" required>
+      <button type="submit"><i class="fa-solid fa-plus"></i></button>
+    </form>
+    <ul id="todoList"></ul>
+  </div>
+</div>
+
+  <!-- Timer Section -->
+
+<div id="timerSection">
+  <div id="modeButtons">
+    <button class="mode_btn active" data-mode="pomodoro">Focus</button>
+    <button class="mode_btn" data-mode="short">Short Break</button>
+    <button class="mode_btn" data-mode="long">Long Break</button>
+  </div>
+  <h1>🌸Pomodoro Timer🌸</h1>
+  <div id="timer">25:00</div>
+  <button onclick="startTimer()"><i class="fa-solid fa-play"></i> Start</button>
+  <button onclick="pauseTimer()"><i class="fa-solid fa-pause"></i> Pause</button>
+  <button onclick="resetTimer()"><i class="fa-solid fa-stop"></i> Reset</button>
+  <button id="openSettingsBtn"><i class="fa-solid fa-cog"></i></button>
+</div>
+
+  <div id="settingsModal" class="modal" style="display:none;">
+    <div class="modal-content">
+      <span id="closeSettingsBtn" class="close">&times;</span>
+      <h2>Set Timer Durations</h2>
+      <label>Pomodoro (minutes): <input type="number" id="pomodoroInput" min="1" value="25"></label><br>
+      <label>Short Break (minutes): <input type="number" id="shortBreakInput" min="1" value="5"></label><br>
+      <label>Long Break (minutes): <input type="number" id="longBreakInput" min="1" value="15"></label><br>
+      <button id="saveSettingsBtn"><i class="fa-solid fa-save"></i> Save</button>
+    </div>
+  </div>
+  
+  <div id="notification" class="notification" style="display:none;">
+    <p>Time's up!</p>
+    <button id="closeNotificationBtn"><i class="fa-solid fa-times"></i> Close</button>
+  </div>
+
+  <!--about section-->
+  <div id="about" class="about">
+    <h2>About Pomodoro Timer</h2>
+    <p>The Pomodoro Technique is a time management method developed by Francesco Cirillo in the late 1980s. It uses a timer to break work into intervals, traditionally 25 minutes in length, separated by short breaks.</p>   
+    <p>After four pomodoros, you take a longer break of 15-30 minutes. This technique helps to improve focus and productivity by creating a sense of urgency and allowing for regular breaks.</p>
+    <p>Try it out and see how it can help you manage your time better!</p>
+   
+  
+  </div>
+
+
+  <footer>
+    <p>Made with ❤️ by Chehd</p>
+  </footer>
+
+  <script src="script.js"></script>
+ 
+</body>
+</html>
