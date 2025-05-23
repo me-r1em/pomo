@@ -2,11 +2,6 @@ const aboutSection = document.getElementById('about');
 const timerSection = document.getElementById('timerSection');
 const tabBtns = document.querySelectorAll('.tab_btn');
 const line = document.querySelector('.tab_box .line');
-
-// ...existing code...
-
-// ...existing code...
-
 const todoForm = document.getElementById('todoForm');
 const todoInput = document.getElementById('todoInput');
 const todoList = document.getElementById('todoList');
@@ -30,7 +25,6 @@ if (todoForm && todoInput && todoList) {
     }
   });
 }
-// ...existing code...
 
 const bgUpload = document.getElementById('bgUpload');
 if (bgUpload) {
@@ -55,9 +49,6 @@ if (resetBgBtn) {
   });
 }
 
-// ...existing code...
-// ...existing code...
-
 const modeBtns = document.querySelectorAll('.mode_btn');
 
 modeBtns.forEach(btn => {
@@ -78,7 +69,6 @@ modeBtns.forEach(btn => {
   });
 });
 
-// ...existing code...
 // Tab switching logic
 tabBtns.forEach((btn, idx) => {
   btn.addEventListener('click', () => {
@@ -101,7 +91,6 @@ tabBtns.forEach((btn, idx) => {
 });
 
 const homeSection = document.getElementById('homeSection');
-// ...existing code...
 tabBtns.forEach((btn, idx) => {
   btn.addEventListener('click', () => {
     moveLineToTab(btn);
